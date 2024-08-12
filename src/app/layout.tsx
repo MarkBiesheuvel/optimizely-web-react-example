@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script'
 import { Inter } from 'next/font/google';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default ({children}: Readonly<{children: React.ReactNode}>) => {
   return (
     <html lang='en' data-bs-theme='dark'>
+      <Script src="/optimizely.js" strategy="afterInteractive"/>
       <body className={inter.className}>
         <Container className='my-4'>
           {children}
